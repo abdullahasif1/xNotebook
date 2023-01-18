@@ -10,7 +10,7 @@ const UserSchema = new Schema({
     email:{
         type: String,
         required: true,
-        //unique: true
+        unique: true
     },
     password:{
         type: String,
@@ -34,5 +34,5 @@ const UserSchema = new Schema({
   });
 
   const User = mongoose.model('user',UserSchema);
- // User.createIndexes(); if you want to check for no duplicate email cause email must he unique
+  User.createIndexes(); //if you want to check for no duplicate email cause email must he unique
   module.exports = User;
